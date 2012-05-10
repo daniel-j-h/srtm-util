@@ -6,6 +6,9 @@
 #include <algorithm>
 
 
+namespace SRTMUtils {
+
+
 /* simple .hgt file parser */
 class HGTParser {
   public:
@@ -42,6 +45,9 @@ inline int HGTParser::getHeight(const long int& x, const long int& y) const {
 inline void HGTParser::convertEndianess() {
   std::for_each(height, height + (maxx * maxy), [](uint16_t& h){ h = (((h & 0xff) << 8) | ((h & 0xff00) >> 8)); });
 }
+
+
+} // namespace
 
 
 #endif

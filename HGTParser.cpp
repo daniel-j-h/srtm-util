@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <fstream>
 
 #include "HGTParser.h"
@@ -10,9 +9,11 @@ using std::ios_base;
 using std::cerr;
 using std::endl;
 
+using namespace SRTMUtils;
+
 
 HGTParser::HGTParser(const string& filename, const long int& maxx_, const long int& maxy_):
-    maxx(maxx_), maxy(maxy_), height(new uint16_t[maxx_ * maxy_]) {
+    maxx(maxx_), maxy(maxy_), height(new uint16_t[maxx_ * maxy_]()) {
 
   ifstream file;
 
