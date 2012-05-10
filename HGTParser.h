@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <string>
 #include <algorithm>
+#include <memory>
 
 
 namespace SRTMUtils {
@@ -31,19 +32,19 @@ class HGTParser {
     long int maxy;
 
     /* actual height data */
-    uint16_t* height;
+    std::unique_ptr<uint16_t[]> height;
 };
 
 /* inlined, we need them often */
 inline int HGTParser::getHeight(const long int& x, const long int& y) const {
-  if(height == nullptr)
+  if(height.get() == nullptr)
     return 0; /* defaulted error height */
   else
-    return static_cast<int>(height[y * maxx + x]);
+    return static_cast<int>((height.get())[y * maxx + x]);
 }
 
 inline void HGTParser::convertEndianess() {
-  std::for_each(height, height + (maxx * maxy), [](uint16_t& h){ h = (((h & 0xff) << 8) | ((h & 0xff00) >> 8)); });
+  std::for_each(height.get(), height.get() + (maxx * maxy), [](uint16_t& h){ h = (((h & 0xff) << 8) | ((h & 0xff00) >> 8)); });
 }
 
 
