@@ -7,7 +7,7 @@
 #include <memory>
 
 
-namespace SRTMUtils {
+namespace SRTMUtil {
 
 
 /* simple .hgt file parser */

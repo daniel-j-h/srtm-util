@@ -10,7 +10,7 @@ using std::unique_ptr;
 using std::cerr;
 using std::endl;
 
-using namespace SRTMUtils;
+using namespace SRTMUtil;
 
 
 HGTParser::HGTParser(const string& filename, const long int& maxx_, const long int& maxy_):

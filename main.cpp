@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 #include "HGTParser.h"
 
@@ -6,7 +7,9 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-using SRTMUtils::HGTParser;
+using SRTMUtil::HGTParser;
+
+using namespace std;
 
 
 int main(int argc, char** argv) {
@@ -21,7 +24,6 @@ int main(int argc, char** argv) {
   }
   else {
     cerr << "error: invalid arguments" << endl;
-    cerr << "usage: ./parser file mode" << endl;
-    cerr << "file is your .hgt file and mode is the SRTM mode: 1 for U.S. and 3 for world" << endl;
+    cerr << "usage: ./srtm-util file.hgt" << endl;
   }
 }

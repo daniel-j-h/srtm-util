@@ -18,7 +18,10 @@ Furthermore there will be some sort of fancy implementation in the future, like 
 Compiling
 ---------
 
-This project uses new __C++11__ language features
+This project uses new __C++11__ language features, so make sure to use an up to date compiler
+
+make
+./srtm-util N36W111.hgt
 
 
 Sources
@@ -26,6 +29,7 @@ Sources
 
   * [.hgt files and further ressources](http://dds.cr.usgs.gov/srtm/)
   * [SRTM NASA](http://www2.jpl.nasa.gov/srtm/)
+  * [CGIAR-CSI best global coverage](http://srtm.csi.cgiar.org/SELECTION/inputCoord.asp)
   * [SRTM Wikipedia](https://en.wikipedia.org/wiki/SRTM)
 
 
