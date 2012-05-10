@@ -17,7 +17,10 @@ class HGTParser {
     explicit HGTParser(const std::string& filename, const long int& maxx_, const long int& maxy_);
     ~HGTParser();
 
-    /* TODO: copy and assignment operator */
+    /* copy, assign, move deleted for now, one parser per .hgt seems fine */
+    HGTParser(HGTParser const& other) = delete;
+    HGTParser& operator=(HGTParser other) = delete;
+    HGTParser(HGTParser&& other) = delete;
 
     /* height or invalid point by specification */
     int getHeight(const long int& x, const long int& y) const;
