@@ -10,8 +10,10 @@
 class HGTParser {
   public:
     /* height data is initialized to 0, so in case of errors you get height data of value 0 */
-    explicit HGTParser(const std::string& filename, const long int& maxx, const long int& maxy);
+    explicit HGTParser(const std::string& filename, const long int& maxx_, const long int& maxy_);
     ~HGTParser();
+
+    /* TODO: copy and assignment operator */
 
     /* height or invalid point by specification */
     int getHeight(const long int& x, const long int& y) const;
