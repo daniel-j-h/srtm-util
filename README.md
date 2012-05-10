@@ -1,7 +1,7 @@
 SRTM Utilities
 ==============
 
-Using the Shuttle Radar Topography Mission (SRTM) elevation models and related .hgt files for visualization and exploration.
+Using the Shuttle Radar Topography Mission (SRTM) elevation models and related .hgt files for visualization and exploration
 
 
 Description
@@ -14,7 +14,11 @@ So let's have fun with it
 This repository is used to implement the basic handling (import, conversion, ...) of the downloadable .hgt files.
 Furthermore there will be some sort of fancy implementation in the future, like a OpenGL renderer, a height map generator for game maps, or some point cloud trickery
 
-# Note: This project uses the new C++11 language features, so you should use a recent compiler
+
+Compiling
+---------
+
+This project uses new __C++11__ language features
 
 
 Sources
