@@ -18,19 +18,10 @@ Furthermore there will be some sort of fancy implementation in the future, like 
 Compiling
 ---------
 
-This project uses new __C++11__ language features, so make sure to use an up to date compiler
+This project uses new __C++11__ language features, so make sure to use an up to date compiler, e.g. g++-4.7
 
-make
-./srtm-util N36W111.hgt
-
-
-Sources
--------
-
-  * [.hgt files and further ressources](http://dds.cr.usgs.gov/srtm/)
-  * [SRTM NASA](http://www2.jpl.nasa.gov/srtm/)
-  * [CGIAR-CSI best global coverage](http://srtm.csi.cgiar.org/SELECTION/inputCoord.asp)
-  * [SRTM Wikipedia](https://en.wikipedia.org/wiki/SRTM)
+  * CXX="g++-4.7" make
+  * ./srtm-util N36W111.hgt
 
 
 Overview
@@ -38,3 +29,12 @@ Overview
 
   * HGTParser: Converts the raw .hgt file and provides the polished height data
   * main: Usage example; will be extended
+
+
+External Sources
+----------------
+
+  * [.hgt files and further ressources](http://dds.cr.usgs.gov/srtm/)
+  * [SRTM NASA](http://www2.jpl.nasa.gov/srtm/)
+  * [CGIAR-CSI best global coverage](http://srtm.csi.cgiar.org/SELECTION/inputCoord.asp)
+  * [SRTM Wikipedia](https://en.wikipedia.org/wiki/SRTM)

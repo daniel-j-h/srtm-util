@@ -1,7 +1,7 @@
 # srtm-util Makefile
-CXX        = g++-4.7
-CXXFLAGS   = -std=c++11 -Wall -Wextra -O2
-TARGET     = srtm-util
+CXX        ?= g++-4.7
+CXXFLAGS   ?= -std=c++11 -Wall -Wextra -O2
+TARGET     ?= srtm-util
 
 srtm-util: main.o HGTParser.o
 	$(CXX) $(CXXFLAGS) main.o HGTParser.o -o $(TARGET)
