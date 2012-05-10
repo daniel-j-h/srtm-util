@@ -51,9 +51,9 @@ TileSurface getSurfaceFromArg(string& file) {
 
   if(lower(ext) == "pdf")
     surface = TileSurface::PDF;
-  else if(lower(file) == "ps")
+  else if(lower(ext) == "ps")
     surface = TileSurface::PS;
-  else if(lower(file) == "svg")
+  else if(lower(ext) == "svg")
     surface = TileSurface::SVG;
 
   return surface;
