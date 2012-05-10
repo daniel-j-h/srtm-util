@@ -18,12 +18,18 @@ class TileExporter {
     TileExporter& operator=(TileExporter other) = delete;
     TileExporter(TileExporter&& other) = delete;
 
-    /* accessor */
+    /* writes all the data from the parser onto the specified surface and into a file */
     void writeSurface(const std::string& filename, TileSurface surface) const;
 
   private:
     /* more should not be necessary */
     const HGTParser& parser;
+
+    /* surface actors */
+    void writeImage(const std::string& filename) const;
+    void writePDF(const std::string& filename) const;
+    void writePS(const std::string& filename) const;
+    void writeSVG(const std::string& filename) const;
 };
 
 

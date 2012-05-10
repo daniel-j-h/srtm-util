@@ -14,8 +14,8 @@ using std::endl;
 using namespace SRTMUtil;
 
 
-HGTParser::HGTParser(const string& filename, SRTMModel model):
-    max(static_cast<long int>(model)), height(unique_ptr<uint16_t[]>(new uint16_t[max * max]())) {
+HGTParser::HGTParser(const string& filename, SRTMModel model) :
+  max(static_cast<long int>(model)), height(unique_ptr<uint16_t[]>(new uint16_t[max * max]())) {
 
   ifstream file;
 
