@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <fstream>
 
 #include "HGTParser.h"
@@ -31,6 +32,7 @@ HGTParser::HGTParser(const string& filename, SRTMModel model) :
 
     cerr << "error: could not load file" << endl;
   }
+
   convertEndianess();
 }
 
