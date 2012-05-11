@@ -19,7 +19,7 @@ Dependencies
 ------------
 
 I'm using some new fancy __C++11__ features, so make sure to use an up to date compiler, e.g. g++-4.7.
-The exporter uses the graphics library Cairo. I'm using [__cairo-1.12.2__](http://cairographics.org/download/) and the C++ bindings [__cairomm-1.10.0__](http://cairographics.org/cairomm/), compiled from git; which is quite nice to build, so you can do it too (or if you have Deban Squeeze you have to, nonetheless).
+The exporter uses the graphics library Cairo. I'm using [__cairo-1.12.2__](http://cairographics.org/download/) and the C++ bindings [__cairomm-1.10.0__](http://cairographics.org/cairomm/), compiled from git; which is quite nice to build, so you can do it too (or if you have Debian Squeeze you have to, nonetheless).
 
 
 Compiling
@@ -36,7 +36,7 @@ Overview
   * SRTModel: Only SRTM model 1 and 3 ('U.S.' and 'World') are currently implemented
   * TileExporter: Exports the height data from the parser, by using the graphics library Cairo
   * TileSurface: Available export surfaces, like image, pdf, svg
-  * main: Usage example; will be extended
+  * main: Usage example; visualizes a .hgt file
 
 
 External Sources

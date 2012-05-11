@@ -1,5 +1,4 @@
 #include <iostream>
-#include <fstream>
 #include <algorithm>
 
 #include "SRTMModel.h"
@@ -20,7 +19,7 @@ using SRTMUtil::TileSurface;
 using namespace std;
 
 
-TileSurface getSurfaceFromArg(string& file);
+TileSurface getSurfaceFromArg(const string& file);
 
 
 /* process .hgt input file and create visual representation */
@@ -43,7 +42,7 @@ int main(int argc, char** argv) {
 
 
 /* image as default surface */
-TileSurface getSurfaceFromArg(string& file) {
+TileSurface getSurfaceFromArg(const string& file) {
   auto ext = file.substr(file.find_last_of(".") + 1);
   auto lower = [](string& s) { transform(s.begin(), s.end(), s.begin(), ::tolower); return s; };
 

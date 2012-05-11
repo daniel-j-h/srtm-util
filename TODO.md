@@ -1,5 +1,5 @@
 TODO
 ====
 
-* use height
-* opengl
+* colored height map
+* 3d

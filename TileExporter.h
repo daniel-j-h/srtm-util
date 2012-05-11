@@ -11,7 +11,7 @@ namespace SRTMUtil {
 /* simple tile exporter */
 class TileExporter {
   public:
-    explicit TileExporter(const HGTParser& parser_) : parser(parser_) {}
+    explicit TileExporter(const HGTParser& parser_) : parser(parser_) { }
 
     /* copy, assign, move deleted for now */
     TileExporter(TileExporter const& other) = delete;
