@@ -30,7 +30,18 @@ class TileExporter {
     void writePDF(const std::string& filename) const;
     void writePS(const std::string& filename) const;
     void writeSVG(const std::string& filename) const;
+
+    /* alpha scaling of height, 0 to 1, used for height point drawing */
+    double getHeightAlpha(const long int& x, const long int& y) const;
 };
+
+
+inline double TileExporter::getHeightAlpha(const long int& x, const long int& y) const {
+  int long distance = parser.getHeightMax() - parser.getHeightMin();
+  double alpha = static_cast<double>((parser.getHeight(x, y) - parser.getHeightMin())) / distance;
+
+  return alpha;
+}
 
 
 } // namespace

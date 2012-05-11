@@ -1,3 +1,4 @@
+#include <cmath>
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -42,6 +43,7 @@ using namespace SRTMUtil;
 
 /* each actor is different in some way, just look at them */
 void TileExporter::writeSurface(const string& filename, TileSurface surface) const {
+
   switch(surface) {
     case TileSurface::Image:
       writeImage(filename);
@@ -66,9 +68,13 @@ void TileExporter::writeImage(const std::string& filename) const {
   auto context = Context::create(surface);
 
   context->save();
-  context->set_source_rgb(0.5, 0.5, 0.5);
+  context->set_source_rgb(1.0, 1.0, 1.0);
   context->paint();
   context->restore();
+
+  /* */
+  context->set_antialias(Cairo::ANTIALIAS_NONE);
+  context->set_line_width(1.0);
 
   surface->write_to_png(filename);
 }
