@@ -16,7 +16,8 @@ using namespace SRTMUtil;
 
 
 HGTParser::HGTParser(const string& filename, SRTMModel model) :
-  max(static_cast<long int>(model)), height(unique_ptr<uint16_t[]>(new uint16_t[max * max]())) {
+  max(static_cast<long int>(model)),
+  height(unique_ptr<uint16_t[]>(new uint16_t[max * max]())) {
 
   ifstream file;
 
@@ -41,11 +42,15 @@ HGTParser::~HGTParser() {
 }
 
 void HGTParser::convertEndianess() {
-  std::for_each(height.get(), height.get() + (max * max), [](uint16_t& h){ h = (((h & 0xff) << 8) | ((h & 0xff00) >> 8)); });
+  std::for_each(height.get(), height.get() + (max * max), [](uint16_t& h){
+      h = (((h & 0xff) << 8) | ((h & 0xff00) >> 8));
+  });
 }
 
 int HGTParser::getHeightMin() const {
-  return static_cast<int>(*std::min_element(height.get(), height.get() + (max * max)));
+  return static_cast<int>(
+      *std::min_element(height.get(), height.get() + (max * max))
+  );
 }
 
 int HGTParser::getHeightMax() const {
@@ -53,7 +58,9 @@ int HGTParser::getHeightMax() const {
   int heightMax = 0;
 
   /* filter void 0x8000 values */
-  std::for_each(height.get(), height.get() + (max * max), [&heightMax](uint16_t& h){ if((h > heightMax) && (h != 0x8000)) heightMax = h; });
+  std::for_each(height.get(), height.get() + (max * max), [&heightMax](uint16_t& h){
+      if((h > heightMax) && (h != 0x8000)) heightMax = h;
+  });
 
   return heightMax;
 }

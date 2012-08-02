@@ -19,7 +19,7 @@ class HGTParser {
     explicit HGTParser(const std::string& filename, SRTMModel model);
     ~HGTParser();
 
-    /* copy, assign, move deleted for now, one parser per .hgt seems fine */
+    /* todo: implement them */
     HGTParser(HGTParser const& other) = delete;
     HGTParser& operator=(HGTParser other) = delete;
     HGTParser(HGTParser&& other) = delete;
@@ -47,8 +47,10 @@ class HGTParser {
 
 inline int HGTParser::getHeight(const long int& x, const long int& y) const {
   if(height.get() == nullptr)
-    return 0; /* defaulted error height */
+    /* defaulted error height */
+    return 0;
   else
+    /* not cache-friendly, but the tiles are not that large, anyway */
     return static_cast<int>((height.get())[y * max + x]);
 }
 

@@ -17,7 +17,7 @@ This repository is used to implement the basic handling (import, conversion, ...
 Dependencies
 ------------
 
-I'm using some new fancy __C++11__ features, so make sure to use an up to date compiler, e.g. g++-4.7
+I'm using some new fancy __C++11__ features, so make sure to use an up to date compiler, e.g. g++-4.7 or clang-3.1
 
 
 Compiling
@@ -43,9 +43,3 @@ External Sources
   * [CGIAR-CSI best global coverage](http://srtm.csi.cgiar.org/SELECTION/inputCoord.asp)
   * [SRTM Wikipedia](https://en.wikipedia.org/wiki/SRTM)
 
-
-History
--------
-
-The Cairo graphics library was used for dot by dot drawing and saving to png, pdf, ps and svg, which unfortunately was inefficient.
-The last commit with Cairo as dependency is [acf2d3c](https://github.com/daniel-j-h/srtm-util/tree/acf2d3c06742dcf1baec615c9e0a1635a514633c)

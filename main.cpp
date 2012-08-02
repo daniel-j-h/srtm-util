@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 
 #include "SRTMModel.h"
 #include "HGTParser.h"
@@ -8,7 +7,6 @@ using std::string;
 using std::cerr;
 using std::cout;
 using std::endl;
-using std::transform;
 
 using SRTMUtil::HGTParser;
 using SRTMUtil::SRTMModel;
