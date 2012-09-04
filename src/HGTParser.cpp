@@ -55,19 +55,11 @@ void HGTParser::calculateStatistics() {
   const auto begin = height.get();
   const auto end = height.get() + (tileSize * tileSize);
 
-  int accu = 0;
-
-  /* max */
-  for_each(begin, end, [&accu](const uint16_t h) {
-    if((h > accu) && (h != 0x8000)) accu = h;
+  heightMin = *std::min_element(begin, end, [](const uint16_t lhs, const uint16_t rhs){
+    return (lhs < rhs) and (lhs != 0x8000);
   });
 
-  heightMax = accu;
-
-  /* min */
-  for_each(begin, end, [&accu](const uint16_t h){
-    if((h < accu) && (h != 0x8000)) accu = h;
+  heightMax = *std::max_element(begin, end, [](const uint16_t lhs, const uint16_t rhs){
+    return (lhs < rhs) and (rhs != 0x8000);
   });
-
-  heightMin = accu;
 }
