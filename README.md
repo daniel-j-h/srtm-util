@@ -1,5 +1,6 @@
 SRTM Utilities
 ==============
+[![Build Status](https://secure.travis-ci.org/daniel-j-h/srtm-util.png)](http://travis-ci.org/daniel-j-h/srtm-util)
 
 Using the Shuttle Radar Topography Mission (SRTM) elevation models and related .hgt files for visualization and exploration
 
