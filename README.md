@@ -23,6 +23,7 @@ I'm using some new fancy __C++11__ features, so make sure to use an up to date c
 Compiling
 ---------
 
+  * cd src
   * make
   * ./srtm-util N36W111.hgt
 

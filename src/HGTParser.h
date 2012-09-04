@@ -13,19 +13,20 @@ namespace SRTMUtil {
 
 
 /* simple .hgt file parser */
-class HGTParser {
+class HGTParser final {
   public:
     /* height data is initialized to 0, so in case of errors you get height data of value 0 */
     explicit HGTParser(const std::string& filename, SRTMModel model);
-    ~HGTParser();
+    ~HGTParser() = default;
 
-    /* todo: implement them */
+    /* XXX */
     HGTParser(HGTParser const& other) = delete;
     HGTParser& operator=(HGTParser other) = delete;
     HGTParser(HGTParser&& other) = delete;
+    HGTParser& operator=(HGTParser&& other) = delete;
 
     /* height or invalid point by specification */
-    int getHeight(const long int& x, const long int& y) const;
+    int getHeight(const long int x, const long int y) const;
     int getHeightMin() const;
     int getHeightMax() const;
 
@@ -38,14 +39,14 @@ class HGTParser {
     void convertEndianess();
 
     /* defined by the SRTM model specification  */
-    long int max;
+    const long int max;
 
     /* actual height data */
     std::unique_ptr<uint16_t[]> height;
 };
 
 
-inline int HGTParser::getHeight(const long int& x, const long int& y) const {
+inline int HGTParser::getHeight(const long int x, const long int y) const {
   if(height.get() == nullptr)
     /* defaulted error height */
     return 0;

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 #include "SRTMModel.h"
 #include "HGTParser.h"
@@ -10,8 +11,6 @@ using std::endl;
 
 using SRTMUtil::HGTParser;
 using SRTMUtil::SRTMModel;
-
-using namespace std;
 
 
 /* process .hgt input file and give some infos */

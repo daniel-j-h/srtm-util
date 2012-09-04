@@ -1,7 +1,7 @@
 #
 # srtm-util Makefile
 #
-CXX        ?= g++
+CXX        ?= clang++
 CXXFLAGS   ?= -std=c++11 -Wall -Wextra -O2
 TARGET     ?= srtm-util
 

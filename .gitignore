@@ -1,6 +1,8 @@
 *
+!.travis.yml
 !Makefile
 !README.md
 !TODO.md
+!src/
 !*.cpp
 !*.h

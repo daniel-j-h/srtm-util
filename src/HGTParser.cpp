@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -5,6 +6,7 @@
 #include "HGTParser.h"
 #include "SRTMModel.h"
 
+using std::exit;
 using std::string;
 using std::ifstream;
 using std::ios_base;
@@ -16,8 +18,8 @@ using namespace SRTMUtil;
 
 
 HGTParser::HGTParser(const string& filename, SRTMModel model) :
-  max(static_cast<long int>(model)),
-  height(unique_ptr<uint16_t[]>(new uint16_t[max * max]())) {
+  max(static_cast<const long int>(model)),
+  height(unique_ptr<uint16_t[]>(new uint16_t[max * max])) {
 
   ifstream file;
 
@@ -28,17 +30,11 @@ HGTParser::HGTParser(const string& filename, SRTMModel model) :
     file.exceptions(ios_base::goodbit);
 
   } catch(const ios_base::failure &e) {
-    height.reset();
-    max = 0;
-
     cerr << "error: could not load file" << endl;
+    exit(EXIT_FAILURE);
   }
 
   convertEndianess();
-}
-
-HGTParser::~HGTParser() {
-  height.reset();
 }
 
 void HGTParser::convertEndianess() {
@@ -58,7 +54,7 @@ int HGTParser::getHeightMax() const {
   int heightMax = 0;
 
   /* filter void 0x8000 values */
-  std::for_each(height.get(), height.get() + (max * max), [&heightMax](uint16_t& h){
+  std::for_each(height.get(), height.get() + (max * max), [&heightMax](uint16_t h){
       if((h > heightMax) && (h != 0x8000)) heightMax = h;
   });
 
