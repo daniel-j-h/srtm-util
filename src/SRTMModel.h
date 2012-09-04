@@ -15,7 +15,7 @@ enum class SRTMModel : long int {
 
   /*
    * model 3: world,
-   * sampled at three arc-second lat/long intervals, 1201, 1201 samples
+   * sampled at three arc-second lat/long intervals, 1201 lines, 1201 samples
    */
   WORLD = 1201L
 };
